@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>BaseBall Players</title>
+  </head>
+  <body>
+    <h1>Current BaseBall Players</h1>
+    <ul class="bbplayers">
+      <% for(let i=0; i < info.length; i++) {%>
+      <li class="bbplayer">
+        <span><%= info[i].bBName %></span>
+        <span><%= info[i].bBNumber %></span>
+        <span><%= info[i].bBTeam %></span>
+        <span><%= info[i].likes %></span>
+        <span class="fa fa-thumbs-up"></span>
+        <span class="fa fa-trash"></span>
+      </li>
+      <% } %>
+    </ul>
+
+    <h2>Add A BaseBall Player:</h2>
+
+    <form action="/addBaseBall-Player" method="POST">
+      <input type="text" placeholder="Baseball Player Name" name="bBName" />
+      <input type="text" placeholder="Baseball Player Number" name="bBNumber" />
+      <input type="text" placeholder="Baseball Player Team" name="bBTeam" />
+      <input type="submit" />
+    </form>
+    <script src="js/main.js"></script>
+  </body>
+</html>
